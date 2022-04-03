@@ -2,7 +2,7 @@
 Make your [discord buttons](https://discord.com/developers/docs/interactions/message-components) almost equal width.
 
 <p align="center">
-  <img src="https://github.com/Luke265/discord-button-width/blob/master/images/result.png?raw=true" width="830" />
+  <img src="https://raw.githubusercontent.com/Luke265/discord-button-width/main/images/result.png" />
 </p>
 
 # Installation
