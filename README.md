@@ -78,7 +78,7 @@ const maxWidth = Math.max(
     ...buttons.map((button) => getStringWidth(button.label!))
 );
 for (const button of buttons) {
-    button.label = padStringToWidth(button.label!, maxWidth);
+    button.label = padStringToWidth(button.label!, maxWidth, Align.LEFT);
 }
 message.reply({
     components: [

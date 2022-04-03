@@ -1,4 +1,6 @@
-export const CHAR_MAP = {
+import { CharMap, PadMap } from './map';
+
+export const CHAR_MAP: CharMap = {
   '0': 8.67,
   '1': 5,
   '2': 7.47,
@@ -112,7 +114,7 @@ export const CHAR_MAP = {
   '~': 5.72,
   ' ': 3.8,
 };
-export const PAD_MAP: [string, number][] = [
+export const PAD_MAP: PadMap = [
   ['　', 14],
   [' ', 4.65],
   [' ', 3.5],

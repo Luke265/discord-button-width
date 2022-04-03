@@ -1,5 +1,11 @@
 import { CharMap, PadMap } from './map';
 
+export const enum Align {
+  LEFT = 'start',
+  RIGHT = 'end',
+  CENTER = 'center',
+}
+
 export class DiscordButtonWidthUtil {
   protected defaultCharWidth = 7;
   constructor(
@@ -17,13 +23,25 @@ export class DiscordButtonWidthUtil {
       );
   }
 
-  padStringToWidth(str: string, width: number) {
+  padStringToWidth(str: string, width: number, align = Align.LEFT) {
     const currentWidth = this.getStringWidth(str);
     if (currentWidth >= width) {
       return str;
     }
-    let result = str;
-    let remainingWidth = width - currentWidth;
+    const padWidth = width - currentWidth;
+    switch (align) {
+      case Align.RIGHT:
+        return this.pad(padWidth) + str;
+      case Align.CENTER:
+        const pad = this.pad((width - currentWidth) / 2);
+        return pad + str + pad;
+    }
+    return str + this.pad(padWidth);
+  }
+
+  pad(width: number) {
+    let result = '';
+    let remainingWidth = width;
     for (const [char, charWidth] of this.padMap) {
       if (remainingWidth < 0.5) {
         break;
