@@ -1,4 +1,4 @@
-import { CharMap, PadMap } from './map';
+import { CharMap, PadMap } from './map.js';
 
 export const CHAR_MAP: CharMap = {
   '0': 8.67,

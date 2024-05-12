@@ -1,5 +1,5 @@
-import { Align, DiscordButtonWidthUtil } from './discord-button-util';
-import { CHAR_MAP, PAD_MAP } from './constants';
+import { Align, DiscordButtonWidthUtil } from './discord-button-util.js';
+import { CHAR_MAP, PAD_MAP } from './constants.js';
 
 const defaultUtil = new DiscordButtonWidthUtil(CHAR_MAP, PAD_MAP);
 
@@ -10,7 +10,7 @@ export function getStringWidth(str: string) {
 export function padStringToWidth(
   str: string,
   width: number,
-  align = Align.LEFT
+  align = Align.LEFT,
 ) {
   return defaultUtil.padStringToWidth(str, width, align);
 }

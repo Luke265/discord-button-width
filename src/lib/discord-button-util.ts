@@ -1,4 +1,4 @@
-import { CharMap, PadMap } from './map';
+import { CharMap, PadMap } from './map.js';
 
 export const enum Align {
   LEFT = 'start',
@@ -10,7 +10,7 @@ export class DiscordButtonWidthUtil {
   protected defaultCharWidth = 7;
   constructor(
     protected readonly charMap: CharMap,
-    protected readonly padMap: PadMap
+    protected readonly padMap: PadMap,
   ) {}
 
   getStringWidth(str: string) {
@@ -19,7 +19,7 @@ export class DiscordButtonWidthUtil {
       .reduce(
         (totalWidth, char) =>
           totalWidth + (this.charMap[char] ?? this.defaultCharWidth),
-        0
+        0,
       );
   }
 
